@@ -1,0 +1,13 @@
+XDC_open() {
+    GEL_ProjectLoad("Y:/MSP430-OS/Debug/configPkg/package/configPkg.pjt");
+    GEL_ProjectLoad("Y:/MSP430-OS/Debug/configPkg/package/cfg/main_xe430.pjt");
+    GEL_ProjectSetActive("Y:/MSP430-OS/Debug/configPkg/package/cfg/main_xe430.pjt");
+}
+XDC_close() {
+    GEL_ProjectClose("Y:/MSP430-OS/Debug/configPkg/package/configPkg.pjt");
+    GEL_ProjectClose("Y:/MSP430-OS/Debug/configPkg/package/cfg/main_xe430.pjt");
+}
+menuitem "XDC Package"
+hotmenu load_executable () { GEL_Load("Y:/MSP430-OS/Debug/configPkg/main.xe430"); }
+hotmenu open_project () { XDC_open(); }
+hotmenu close_project () { XDC_close(); }
